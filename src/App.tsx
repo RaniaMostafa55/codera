@@ -9,6 +9,7 @@ import {
   About, 
   Journey, 
   WhyUs, 
+  CourseDetails,
   Testimonials, 
   Registration, 
   FAQ, 
@@ -27,6 +28,7 @@ export default function App() {
         <About />
         <Journey />
         <WhyUs />
+        <CourseDetails />
         <Testimonials />
         <Registration />
         <FAQ />

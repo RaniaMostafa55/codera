@@ -74,3 +74,58 @@ export const FAQS = [
     answer: "You can start by booking a free trial via the form on this page or by contacting us on WhatsApp. Our team will guide you through the placement process.",
   },
 ];
+
+export const COURSES = [
+  {
+    title: 'Explorer — Computer Basics',
+    age: 'Ages 7-9',
+    description: 'A magical introduction to the world of computers and digital creation.',
+    color: 'bg-sky-400',
+    icon: 'Monitor',
+    outcomes: [
+      'Understanding computer parts',
+      'Basic keyboard & mouse skills',
+      'Introduction to digital safety',
+      'Logic & problem-solving puzzles'
+    ]
+  },
+  {
+    title: 'Creator — PictoBlox',
+    age: 'Ages 9-12',
+    description: 'Unleash creativity by building interactive games and AI projects using visual blocks.',
+    color: 'bg-yellow-400',
+    icon: 'Blocks',
+    outcomes: [
+      'Visual programming fundamentals',
+      'Game design mechanics',
+      'AI & Machine Learning basics',
+      'Independent project building'
+    ]
+  },
+  {
+    title: 'Coder — Python',
+    age: 'Ages 12-14',
+    description: 'Master the world\'s most versatile language through real-world applications.',
+    color: 'bg-rose-400',
+    icon: 'FileCode',
+    outcomes: [
+      'Text-based coding syntax',
+      'Data structures & logic',
+      'Software engineering basics',
+      'Automation & data tools'
+    ]
+  },
+  {
+    title: 'Builder — Flutter',
+    age: 'Ages 14-16',
+    description: 'Professional mobile app development for real-world impact on iOS and Android.',
+    color: 'bg-indigo-400',
+    icon: 'Smartphone',
+    outcomes: [
+      'Cross-platform app development',
+      'UI/UX design principles',
+      'API & Cloud integration',
+      'Launch-ready portfolio'
+    ]
+  }
+];

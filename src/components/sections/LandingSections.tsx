@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Blocks, FileCode, Monitor, Smartphone, CheckCircle2, Star, UserCheck, Zap, Rocket } from 'lucide-react';
 import React from 'react';
-import { LEARNING_JOURNEY, FAQS, TESTIMONIALS } from '../../constants/content';
+import { LEARNING_JOURNEY, FAQS, TESTIMONIALS, COURSES } from '../../constants/content';
 import { Accordion } from '../ui/Accordion';
 import { Button } from '../ui/Button';
 import { RegistrationForm } from '../ui/RegistrationForm';
@@ -137,6 +137,55 @@ export const WhyUs: React.FC = () => (
             />
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+);
+
+// --- Course Details Section ---
+export const CourseDetails: React.FC = () => (
+  <section id="courses" className="py-24 bg-white relative">
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6">Explore Our <span className="text-brand-sky">Programs</span></h2>
+        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          Tailored curriculums that grow with your child's passion and skill level.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {COURSES.map((course, i) => {
+          const Icon = { Monitor, Blocks, FileCode, Smartphone }[course.icon] as any;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 flex flex-col h-full hover:shadow-2xl hover:shadow-sky-200/30 transition-all duration-300"
+            >
+              <div className={`w-14 h-14 rounded-2xl ${course.color} text-white flex items-center justify-center mb-6 shadow-lg shadow-sky-100`}>
+                <Icon size={28} />
+              </div>
+              <div className="mb-2 inline-block px-3 py-1 bg-white rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-100 w-fit">
+                {course.age}
+              </div>
+              <h3 className="text-xl font-black text-slate-800 mb-4">{course.title}</h3>
+              <p className="text-slate-500 text-sm mb-8 flex-1">{course.description}</p>
+              
+              <div className="space-y-3">
+                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Key Learning Outcomes</p>
+                {course.outcomes.map((outcome, j) => (
+                  <div key={j} className="flex items-start gap-2 text-xs text-slate-600">
+                    <CheckCircle2 size={14} className="text-brand-emerald mt-0.5 shrink-0" />
+                    <span>{outcome}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   </section>
