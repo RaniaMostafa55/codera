@@ -5,7 +5,7 @@ import { Button } from './Button';
 import { googleSheetsService, RegistrationData } from '../../services/googleSheets';
 
 // Replace this with your actual Google Apps Script Web App URL
-const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxyz.../exec';
+const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwnblu3IqqJ6LIeY76tWBVBJw0KaDWuM-002EAC506q2qsImaLe9sDz16oVl7e3dxM4/exec';
 
 export const RegistrationForm: React.FC = () => {
   const [formData, setFormData] = useState<RegistrationData>({
@@ -29,7 +29,7 @@ export const RegistrationForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    
+
     try {
       // For demonstration, if the URL is the placeholder, we show mock success
       if (DEFAULT_WEB_APP_URL.includes('xyz')) {
@@ -49,7 +49,7 @@ export const RegistrationForm: React.FC = () => {
 
   if (status === 'success') {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         className="glass-card rounded-[2rem] p-10 text-center flex flex-col items-center justify-center gap-6 border-2 border-emerald-100"
@@ -73,7 +73,7 @@ export const RegistrationForm: React.FC = () => {
   return (
     <div className="glass-card rounded-[2rem] p-8 md:p-10 border-2 border-brand-sky/10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-brand-sky/5 rounded-bl-full -z-10" />
-      
+
       <div className="mb-8">
         <h3 className="text-2xl font-bold text-slate-900">Free Demo Class</h3>
         <p className="text-sm text-slate-500 mt-1">Fill the form and we'll reach out within 24h.</p>
@@ -166,8 +166,20 @@ export const RegistrationForm: React.FC = () => {
           </select>
         </div>
 
-        <Button 
-          type="submit" 
+        <div className="space-y-1">
+          <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">Additional Notes (Optional)</label>
+          <textarea
+            name="notes"
+            value={formData.notes}
+            onChange={handleChange}
+            placeholder="Anything else we should know?"
+            rows={2}
+            className="w-full px-4 py-3 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-brand-sky outline-none transition-all placeholder:text-slate-400 text-sm resize-none"
+          />
+        </div>
+
+        <Button
+          type="submit"
           disabled={status === 'loading'}
           className="w-full gap-2 mt-auto py-4 rounded-2xl"
         >

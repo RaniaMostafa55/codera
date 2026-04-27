@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { MousePointer2, Sparkles, Star } from 'lucide-react';
 import React from 'react';
 import { Button } from '../ui/Button';
+import heroImg from '../../assets/image1.jpeg';
 
 export const Hero: React.FC = () => {
   return (
@@ -24,7 +25,7 @@ export const Hero: React.FC = () => {
               Turn Your Child Into a <span className="decoration-wavy-yellow text-brand-sky">Young Creator</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-lg leading-relaxed">
-              Fun online coding classes where children learn by building real projects. 
+              Fun online coding classes where children learn by building real projects.
               From basic logic to advanced app development.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -33,13 +34,13 @@ export const Hero: React.FC = () => {
                   Book Free Trial
                 </Button>
               </a>
-              <a href="https://wa.me/20123456789" target="_blank" className="w-full sm:w-auto">
+              <a href="https://wa.me/201018168893" target="_blank" className="w-full sm:w-auto">
                 <Button variant="whatsapp" size="lg" className="w-full gap-2">
                   Chat on WhatsApp
                 </Button>
               </a>
             </div>
-            
+
             <div className="mt-10 flex items-center gap-4 px-4 border-l border-slate-200">
               <div className="flex -space-x-2">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-sky-200"></div>
@@ -62,14 +63,14 @@ export const Hero: React.FC = () => {
             className="relative"
           >
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-sky-100 border-8 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1593526492327-b071f3d5333e?auto=format&fit=crop&q=80&w=1200" 
-                alt="Kid Coding" 
+              <img
+                src={heroImg}
+                alt="Kid Coding"
                 className="w-full aspect-[4/3] object-cover"
               />
             </div>
             {/* Floating UI Elements */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
               className="absolute -top-6 -right-6 glass-card p-4 rounded-2xl z-20 flex items-center gap-3"
@@ -83,7 +84,7 @@ export const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.5 }}
               className="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl z-20 flex items-center gap-3"

@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../../constants/content';
 import { Button } from './Button';
+import logo from '../../assets/logo.png';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,23 +18,22 @@ export const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-lg border-b border-slate-100 py-3' : 'bg-transparent py-5'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-lg border-b border-slate-100 py-3' : 'bg-transparent py-5'
+      }`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-3 group">
           <div className="relative">
-            <img src="/input_file_0.png" alt="Codera Logo" className="h-10 md:h-12 w-auto relative z-10 transition-transform group-hover:scale-110" />
+            <img src={logo} alt="Codera Logo" className="h-16 md:h-18 w-auto relative z-10 transition-transform group-hover:scale-110" />
             <div className="absolute inset-0 bg-brand-sky/20 blur-md rounded-full -z-0" />
           </div>
-          <span className="text-2xl font-extrabold tracking-tight text-slate-900">Codera</span>
+          {/* <span className="text-2xl font-extrabold tracking-tight text-slate-900">Codera</span> */}
         </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               className="text-slate-500 hover:text-brand-sky font-medium transition-colors"
             >
@@ -46,7 +46,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="md:hidden p-2 text-slate-600"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -64,8 +64,8 @@ export const Navbar: React.FC = () => {
             className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 py-6 px-4 md:hidden flex flex-col gap-4 shadow-xl"
           >
             {NAV_LINKS.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
                 className="text-slate-600 text-lg font-medium px-4 py-2"
                 onClick={() => setIsMenuOpen(false)}

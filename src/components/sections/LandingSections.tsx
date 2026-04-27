@@ -5,6 +5,11 @@ import { LEARNING_JOURNEY, FAQS, TESTIMONIALS, COURSES } from '../../constants/c
 import { Accordion } from '../ui/Accordion';
 import { Button } from '../ui/Button';
 import { RegistrationForm } from '../ui/RegistrationForm';
+import logo from '../../assets/logo.png';
+import review1 from '../../assets/review1.jpeg';
+import review2 from '../../assets/review2.jpeg';
+import review3 from '../../assets/review3.jpeg';
+import review4 from '../../assets/review4.jpeg';
 
 // SVG Curve for section separation
 const Curve = ({ color = 'fill-white' }: { color?: string }) => (
@@ -22,19 +27,19 @@ export const About: React.FC = () => (
       <div className="max-w-3xl mx-auto text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-black text-slate-800 mb-6">Our Mission at Codera</h2>
         <p className="text-xl text-slate-600 leading-relaxed">
-          We believe that every child has a creative spark. Our mission is to empower the next generation 
-          of creators, thinkers, and problem-solvers through the magic of code. We don't just teach syntax; 
+          We believe that every child has a creative spark. Our mission is to empower the next generation
+          of creators, thinkers, and problem-solvers through the magic of code. We don't just teach syntax;
           we teach the confidence to build the future.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { icon: Star, title: "Modern Curriculum", text: "Always up-to-date with industry trends." },
           { icon: UserCheck, title: "Inspiring Mentors", text: "Passionate teachers who connect with kids." },
           { icon: Zap, title: "Active Learning", text: "No boring lectures. Just building and doing." }
         ].map((item, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             whileHover={{ y: -10 }}
             className="bg-white p-8 rounded-3xl shadow-xl shadow-sky-100/50 flex flex-col items-center text-center border border-white"
@@ -66,11 +71,11 @@ export const Journey: React.FC = () => (
         <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-12 text-center">Curriculum Roadmap</h3>
         <div className="flex flex-col md:flex-row items-center justify-between relative gap-12 md:gap-4">
           <div className="hidden md:block absolute top-[52px] left-0 w-full h-1 bg-slate-200 -translate-y-1/2 z-0" />
-          
+
           {LEARNING_JOURNEY.map((step, i) => {
             const Icon = { Monitor, Blocks, FileCode, Smartphone }[step.icon] as any;
             return (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -79,7 +84,7 @@ export const Journey: React.FC = () => (
                 className="relative z-10 flex flex-col items-center group w-full md:w-1/4"
               >
                 <div className={`w-14 h-14 md:w-20 md:h-20 rounded-full border-4 border-white shadow-xl flex items-center justify-center text-white text-xl font-black ${step.color} transition-transform group-hover:scale-110 mb-4`}>
-                  0{i+1}
+                  0{i + 1}
                 </div>
                 <div className="text-center">
                   <span className="text-sm md:text-base font-black text-slate-800 block mb-1">{step.level}</span>
@@ -112,7 +117,7 @@ export const WhyUs: React.FC = () => (
               "Fun interactive lessons that feel like play",
               "Progressive learning path for long-term growth"
             ].map((text, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -130,9 +135,9 @@ export const WhyUs: React.FC = () => (
         </div>
         <div className="relative">
           <div className="rounded-[3rem] overflow-hidden shadow-2xl skew-y-2 hover:skew-y-0 transition-transform duration-500">
-            <img 
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200" 
-              alt="Classroom" 
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200"
+              alt="Classroom"
               className="w-full aspect-square object-cover"
             />
           </div>
@@ -173,7 +178,7 @@ export const CourseDetails: React.FC = () => (
               </div>
               <h3 className="text-xl font-black text-slate-800 mb-4">{course.title}</h3>
               <p className="text-slate-500 text-sm mb-8 flex-1">{course.description}</p>
-              
+
               <div className="space-y-3">
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Key Learning Outcomes</p>
                 {course.outcomes.map((outcome, j) => (
@@ -202,28 +207,38 @@ export const Testimonials: React.FC = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         {[
-          { 
-            img: "/input_file_1.png", 
+          {
+            img: review1,
             title: "Exceptional Python Progress",
-            desc: "Sharing their journey in our PictoBlox and Python tracks." 
+            desc: "Sharing their journey in our PictoBlox and Python tracks."
           },
-          { 
-            img: "/input_file_2.png", 
+          {
+            img: review2,
             title: "Fun & Engaging Lessons",
-            desc: "How our interactive teaching style sparks curiosity." 
+            desc: "How our interactive teaching style sparks curiosity."
+          },
+          {
+            img: review3,
+            title: "Real World Skills",
+            desc: "Building confidence through practical projects."
+          },
+          {
+            img: review4,
+            title: "Passionate Mentors",
+            desc: "The connection between teacher and student is amazing."
           }
         ].map((t, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             whileHover={{ y: -10 }}
             className="flex flex-col h-full"
           >
             <div className="glass-card rounded-[2.5rem] p-4 flex-1 flex flex-col items-center bg-slate-50/50">
               <div className="rounded-2xl overflow-hidden mb-6 shadow-md border border-slate-200">
-                <img 
-                  src={t.img} 
-                  alt={`Codera Review ${i+1}`} 
-                  className="w-full h-auto object-contain max-h-[400px]" 
+                <img
+                  src={t.img}
+                  alt={`Codera Review ${i + 1}`}
+                  className="w-full h-auto object-contain max-h-[400px]"
                 />
               </div>
               <div className="px-4 pb-4 text-center">
@@ -255,7 +270,7 @@ export const Registration: React.FC = () => (
             Ready to Unlock Your Child's <span className="text-brand-sky">Potential?</span>
           </h2>
           <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-            Fill out the form to join our next cohort. We'll contact you to schedule 
+            Fill out the form to join our next cohort. We'll contact you to schedule
             a free orientation and placement test.
           </p>
           <div className="space-y-4">
@@ -294,7 +309,7 @@ export const FAQ: React.FC = () => (
           <div className="bg-brand-yellow-soft p-8 rounded-[2rem] border border-brand-yellow/20">
             <p className="font-bold text-slate-800 mb-2">Still have questions?</p>
             <p className="text-slate-600 mb-6 text-sm">Our friendly team is here to help you choose the best path for your child.</p>
-            <a href="https://wa.me/20123456789" target="_blank">
+            <a href="https://wa.me/201018168893" target="_blank">
               <Button variant="whatsapp">Talk to us now</Button>
             </a>
           </div>
@@ -311,7 +326,7 @@ export const CTA: React.FC = () => (
     <div className="container mx-auto px-4 md:px-6">
       <div className="bg-brand-sky rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden shadow-2xl shadow-sky-200">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,transparent_100%)]" />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -327,7 +342,7 @@ export const CTA: React.FC = () => (
                 Join Now - Free Trial
               </Button>
             </a>
-            <a href="https://wa.me/20123456789" target="_blank">
+            <a href="https://wa.me/201018168893" target="_blank">
               <Button variant="outline" size="lg" className="w-full sm:w-auto !border-white !text-white hover:!bg-white/10">
                 Contact on WhatsApp
               </Button>
@@ -345,7 +360,7 @@ export const Footer: React.FC = () => (
     <div className="container mx-auto px-4 md:px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div>
-          <img src="/input_file_0.png" alt="Codera" className="h-12 w-auto mb-6 brightness-0 invert" />
+          <img src={logo} alt="Codera" className="h-12 w-auto mb-6 brightness-0 invert" />
           <p className="text-slate-400 mb-6 leading-relaxed">
             Premium online coding academy for children ages 7–16. Empowering creators of the future.
           </p>

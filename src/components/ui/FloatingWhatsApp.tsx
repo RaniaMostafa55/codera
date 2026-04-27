@@ -5,7 +5,7 @@ import React from 'react';
 export const FloatingWhatsApp: React.FC = () => {
   return (
     <motion.a
-      href="https://wa.me/20123456789" // Replace with actual number
+      href="https://wa.me/201018168893" // Replace with actual number
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
