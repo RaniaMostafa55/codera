@@ -5,7 +5,7 @@ import { Button } from './Button';
 import { googleSheetsService, RegistrationData } from '../../services/googleSheets';
 
 // Replace this with your actual Google Apps Script Web App URL
-const DEFAULT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwnblu3IqqJ6LIeY76tWBVBJw0KaDWuM-002EAC506q2qsImaLe9sDz16oVl7e3dxM4/exec';
+const DEFAULT_WEB_APP_URL = import.meta.env.VITE_GOOGLE_SHEETS_URL || '';
 
 export const RegistrationForm: React.FC = () => {
   const [formData, setFormData] = useState<RegistrationData>({
