@@ -1,12 +1,15 @@
-import { motion } from 'motion/react';
-import { MousePointer2, Sparkles, Star } from 'lucide-react';
-import React from 'react';
-import { Button } from '../ui/Button';
-import heroImg from '../../assets/image1.jpeg';
+import { motion } from "motion/react";
+import { MousePointer2, Sparkles, Star } from "lucide-react";
+import React from "react";
+import { Button } from "../ui/Button";
+import heroImg from "../../assets/image1.jpeg";
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative pt-32 pb-20 overflow-hidden min-h-[90vh] flex items-center">
+    <section
+      id="home"
+      className="relative pt-32 pb-20 overflow-hidden min-h-[90vh] flex items-center"
+    >
       {/* Background Blobs */}
       <div className="blob-sky top-20 -left-10 animate-pulse" />
       <div className="blob-yellow bottom-20 -right-10" />
@@ -22,11 +25,12 @@ export const Hero: React.FC = () => {
               <span>Ages 7—16 • Online Classes</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1] mb-6">
-              Turn Your Child Into a <span className="decoration-wavy-yellow text-brand-sky">Young Creator</span>
+              Turn Your Child Into a{" "}
+              <span className=" text-brand-sky">Young Creator</span>
             </h1>
             <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-lg leading-relaxed">
-              Fun online coding classes where children learn by building real projects.
-              From basic logic to advanced app development.
+              Fun online coding classes where children learn by building real
+              projects. From basic logic to advanced app development.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <a href="#register" className="w-full sm:w-auto">
@@ -34,14 +38,18 @@ export const Hero: React.FC = () => {
                   Book Free Trial
                 </Button>
               </a>
-              <a href="https://wa.me/201018168893" target="_blank" className="w-full sm:w-auto">
+              <a
+                href="https://wa.me/201018168893"
+                target="_blank"
+                className="w-full sm:w-auto"
+              >
                 <Button variant="whatsapp" size="lg" className="w-full gap-2">
                   Chat on WhatsApp
                 </Button>
               </a>
             </div>
 
-            <div className="mt-10 flex items-center gap-4 px-4 border-l border-slate-200">
+            {/* <div className="mt-10 flex items-center gap-4 px-4 border-l border-slate-200">
               <div className="flex -space-x-2">
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-sky-200"></div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-rose-200"></div>
@@ -49,11 +57,15 @@ export const Hero: React.FC = () => {
               </div>
               <div>
                 <div className="flex items-center text-brand-yellow">
-                  {[1, 2, 3, 4, 5].map(i => <Star key={i} size={12} fill="currentColor" />)}
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star key={i} size={12} fill="currentColor" />
+                  ))}
                 </div>
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-0.5">Joined by 2,000+ kids</p>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+                  Joined by 2,000+ kids
+                </p>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
@@ -72,29 +84,42 @@ export const Hero: React.FC = () => {
             {/* Floating UI Elements */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               className="absolute -top-6 -right-6 glass-card p-4 rounded-2xl z-20 flex items-center gap-3"
             >
               <div className="bg-emerald-100 p-2 rounded-xl text-emerald-600">
                 <MousePointer2 size={24} />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-800">New Achievement!</p>
-                <p className="text-[10px] text-slate-500">First Python script</p>
+                <p className="text-xs font-bold text-slate-800">
+                  New Achievement!
+                </p>
+                <p className="text-[10px] text-slate-500">
+                  First Python script
+                </p>
               </div>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut', delay: 0.5 }}
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
               className="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl z-20 flex items-center gap-3"
             >
               <div className="bg-amber-100 p-2 rounded-xl text-amber-600">
                 <Sparkles size={24} />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-800">Learn by creation</p>
-                <p className="text-[10px] text-slate-500">Project-based learning</p>
+                <p className="text-xs font-bold text-slate-800">
+                  Learn by creation
+                </p>
+                <p className="text-[10px] text-slate-500">
+                  Project-based learning
+                </p>
               </div>
             </motion.div>
           </motion.div>

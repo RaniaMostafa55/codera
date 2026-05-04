@@ -39,3 +39,11 @@
 .blob-yellow {
   @apply absolute -z-10 w-64 h-64 bg-brand-yellow/10 blur-3xl rounded-full;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
