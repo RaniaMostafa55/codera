@@ -125,7 +125,7 @@ export const RegistrationForm: React.FC = () => {
                 name="parentName"
                 value={formData.parentName}
                 onChange={handleChange}
-                placeholder="John Doe"
+                placeholder="Your Name"
                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50/50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-brand-sky/20 focus:border-brand-sky outline-none transition-all placeholder:text-slate-400 text-sm"
               />
             </div>
@@ -144,7 +144,7 @@ export const RegistrationForm: React.FC = () => {
                 name="childName"
                 value={formData.childName}
                 onChange={handleChange}
-                placeholder="Alex"
+                placeholder="Child Name"
                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50/50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-brand-sky/20 focus:border-brand-sky outline-none transition-all placeholder:text-slate-400 text-sm"
               />
             </div>
